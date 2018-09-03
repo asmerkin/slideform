@@ -76,7 +76,7 @@ $.fn.slideform = function( userOptions ) {
         // Getting our element behind the span.
         var input = $(this).prev();
 
-        if ( input.attr('type') != 'radio' || !input.is(':checked') || !input.is(':disabled') ) {
+        if ( (input.attr('type') != 'radio' || !input.is(':checked')) && !input.is(':disabled') ) {
             input.prop('checked', !input.is(':checked') ).change();
         }
 
@@ -88,19 +88,7 @@ $.fn.slideform = function( userOptions ) {
      * Here probably we could get an array of form values, and then use theat
      */
     $('input, textarea, select').on('blur change', function (event) {
-
         triggerConditions();
-        // var name = $(this).attr('name');
-        // var value = $(this).val();
-        // var condition = $form.find('.slideform-condition[data-field='+ name +']');
-        //
-        // if ( condition.length > 0 ) {
-        //     if ( condition.data('value') == value ) {
-        //         condition.slideDown();
-        //     } else {
-        //         condition.hide();
-        //     }
-        // }
     });
 
 

@@ -137,10 +137,10 @@
         }
 
 
-        $form.submit( function () {
+        $form.on('submit',function ( event ) {
             if ( $options.submit ) {
                 event.preventDefault();
-                $options.submit ( $form );
+                $options.submit (event, $form);
             }
         });
 

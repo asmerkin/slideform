@@ -1,6 +1,6 @@
 {
   "name": "slideform",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple jQuery plugin to create full page slide forms.",
   "main": "index.js",
   "repository": "github:asmerkin/slideform",

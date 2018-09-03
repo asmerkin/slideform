@@ -1,0 +1,36 @@
+// Global Elements
+$sf-height: 100vh;
+
+// Breakpoints
+$md-breakpoint: 767px;
+$sm-breakpoint: 479px;
+
+// Fonts
+// We use system fonts to save as much resources as we want, but you can
+// use any custom font you want.
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// Variables
+$sf-group-width: 600px;
+
+// Colors
+$sf-color-primary: #FF7F11;
+$sf-color-secondary: #E0E0CE; // Used for secondary buttons, helpers. etc.
+$sf-color-tertiary: #f6f6f6; // Used for lines, borders, etc.
+$sf-color-black: #000000;
+$sf-color-white: #EAEAEA;
+$sf-color-red: #F93943;
+
+// Buttons
+$sf-btn-height: 40px;
+$sf-btn-padding: 0 20px;
+$sf-btn-font-size: 16px;
+$sf-bg-color: $sf-color-primary;
+$sf-btn-text-color: #fff;
+$sf-btn-text-color-inverse: #000;
+
+// footer
+$sf-footer-height: 50px;
+
+// Transitions
+$sf-transition: .5s ease;

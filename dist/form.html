@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de Ingreso</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<form action="#" method="POST" class="slideform-form">
+
+    <!--
+    we can attach a header here in the future, for now we're interested in the wrapper and
+    the footer -->
+
+
+    <section class="slideform-wrapper">
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h1>Formulario de Registro</h1>
+                <p>Muchas Gracias por unirte a nuestras caminatas. Necesitamos que completes
+                este formulario para registrarte en la caminata. También nos apoyará para
+                que tengas en claro las reglas y otra información que debas saber.</p>
+            </div>
+        </div>
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Primero, unos datos personales</h2>
+                <p>Necesitamos tus datos personales para contactarte en caso de cualquier emergencia. Es importante que tus datos estén correctos.</p>
+                <div class="row mb-4">
+                    <div class="col-6"><input class="small" type="text" name="first_name" placeholder="Nombre"></div>
+                    <div class="col-6"><input class="small" type="text" name="last_name" placeholder="Apellido"></div>
+                </div>
+
+                <div class="mb-4">
+                    <input class="small" type="email" name="email" placeholder="Tu email">
+                </div>
+                <div>
+                    <input class="small" type="tel" name="phone" placeholder="Teléfono">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Información de Vehículo</h2>
+                <p>Para poder ubicar a todas las personas eficientemente, necesitamos saber con cuantas personas
+                    y cuantos vehículos disponemos.</p>
+
+                <h4>¿Viniste en Auto?</h4>
+                <div class="options options-buttons">
+                    <label for="with_car"><input type="radio" name="with_car" value="yes"><span>Si</span></label>
+                    <label for="with_car"><input type="radio" name="with_car" value="no"><span>No</span></label>
+                </div>
+
+                <div class="slideform-condition" data-condition="input.with_car == 'yes'">
+                    <h4>¿Eres Conductor?</h4>
+                    <div class="options options-buttons">
+                        <label for="car_driver"><input type="radio" name="car_driver" value="yes"><span>Si</span></label>
+                        <label for="car_driver"><input type="radio" name="car_driver" value="no"><span>No</span></label>
+                    </div>
+                </div>
+
+                <div class="slideform-condition" data-condition="input.with_car == 'yes' && input.car_driver == 'yes'">
+                    <h4>¿Cuantos lugares disponibles traes?</h4>
+                    <input type="number" pattern="\d*"/ name="available_seats" class="small" style="width: 50px">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>¿Has participado en Fundación Claves?</h2>
+
+                <p>Nos interesa mucho que nos cuentes si has participado en algún otro evento, sobre todo para conocerte un poco más.</p>
+
+                <div class="options options-list">
+                    <label for="attended[]"><input type="checkbox" name="attended[]" value="Meditaciones"><span>Meditaciones</span></label>
+                    <label for="attended[]"><input type="checkbox" name="attended[]" value="Caminatas"><span>Caminatas</span></label>
+                    <label for="attended[]"><input type="checkbox" name="attended[]" value="Claves Inicial"><span>Claves Inicial</span></label>
+                    <label for="attended[]"><input type="checkbox" name="attended[]" value="Claves 1"><span>Claves 1</span></label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Contacto y Novedades</h2>
+                <p>Tenemos mucha más información y muchos más eventos para vos.
+                    Solo tenés que confirmarnos si querés que te enviemos
+                    información o te contactemos.</p>
+
+                <div data-condition="input.phone != ''">
+                    <h3>¿Te gustaría que te contactemos telefónicamente?</h3>
+                    <p>El objetivo es comentarte sobre nuestros próximos seminarios.</p>
+
+                    <div class="options options-buttons">
+                        <label for="phone_contact"><input type="radio" name="phone_contact" value="yes"><span>Si</span></label>
+                        <label for="phone_contact"><input type="radio" name="phone_contact" value="no"><span>No</span></label>
+                    </div>
+                </div>
+
+                <div data-condition="input.email != ''">
+                    <h3>¿Te gustaría recibir novedades por email?</h3>
+                    <p>Te suscribiremos a nuestro boletín de noticias y recibirás nuestros últimos eventos en tu buzón.</p>
+                    <div class="options options-buttons">
+                        <label for="newsletter"><input type="radio" name="newsletter" value="yes"><span>Si</span></label>
+                        <label for="newsletter"><input type="radio" name="newsletter" value="no"><span>No</span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Exoneración de Riesgos</h2>
+
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ea vitae sunt non dolorum unde suscipit inventore illum earum sit, porro voluptatum, facere quaerat mollitia animi assumenda ipsam alias cumque.</p>
+
+
+                <h3>Conserctum dolor Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod enim earum deserunt corporis, dolorum distinctio, quis molestiae dignissimos aliquam sunt cumque quaerat. Amet natus ullam repudiandae. Vel doloribus, minima. Inventore.</p>
+
+                <h3>Conserctum dolor Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod enim earum deserunt corporis, dolorum distinctio, quis molestiae dignissimos aliquam sunt cumque quaerat. Amet natus ullam repudiandae. Vel doloribus, minima. Inventore.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod enim earum deserunt corporis, dolorum distinctio, quis molestiae dignissimos aliquam sunt cumque quaerat. Amet natus ullam repudiandae. Vel doloribus, minima. Inventore.</p>
+
+                <div class="options options-list">
+                    <label for="accepted"><input type="checkbox" name="accepted" value="1"><span>Acepto la exoneración de riesgos.</span></label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime rerum eum, unde explicabo et animi necessitatibus neque? Quisquam, harum iure asperiores accusamus cumque numquam, fugit, quae vel sequi, ducimus ratione!</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="slideform-footer">
+        <div class="slideform-progress-bar">
+            <span></span>
+        </div>
+
+        <div class="buttons">
+            <button class="slideform-btn slideform-btn-next"><i class="icon-chevron-down"></i></button>
+            <button class="slideform-btn slideform-btn-prev"><i class="icon-chevron-up"></i></button>
+        </div>
+    </footer>
+</form>
+
+<!-- Calling all libraries. -->
+<script src="js/libs.js"></script>
+
+<script>
+    $(document).ready( function () {
+        $('form').slideform({
+            nextButtonText: '<i class="icon-check"></i>&nbsp;&nbsp;OK',
+            validate: {
+                rules: {
+                    first_name: "required",
+                    last_name: "required",
+                    email: {
+                        email: true
+                    },
+                    phone: {
+                        required: function( element ) {
+                            return $("input[name=email]").val().length < 1;
+                        }
+                    },
+                    with_car: 'required',
+                    car_driver: 'required',
+                    available_seats: {
+                        required: true,
+                        digits: true,
+                        min: 1
+                    }
+                },
+                messages: {
+                    first_name: { required: 'Por favor ingresa tu nombre.' },
+                    last_name: { required: 'Por favor ingresa tu apellido.' },
+                    email: {
+                        email: 'Ingresa una dirección de email válida.'
+                    },
+                    phone: {
+                        required: 'Necesitamos tu teléfono si no nos brindas tu email.'
+                    },
+                    with_car: { required: 'Por favor selecciona una opción.' },
+                    car_driver: { required: 'Por favor selecciona una opción.' },
+                    available_seats: {
+                        required: '¿Cuántos asientos disponibles hay en tu vehículo?',
+                        numeric: 'Por favor ingresa un valor numérico',
+                        min: 'Por favor ingresa un valor superior a 0'
+                    }
+                }
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

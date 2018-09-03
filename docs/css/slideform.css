@@ -1,0 +1,250 @@
+form.slideform-form {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 50px;
+  box-sizing: border-box; }
+  form.slideform-form .slideform-slide {
+    height: 100vh;
+    padding-bottom: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    justify-content: center;
+    -webkit-overflow-scrolling: touch;
+    opacity: .1;
+    transition: opacity .8s ease; }
+    form.slideform-form .slideform-slide.active {
+      opacity: 1; }
+    @media screen and (max-width: 767px) {
+      form.slideform-form .slideform-slide {
+        align-items: flex-start;
+        justify-content: flex-start; } }
+  form.slideform-form .slideform-group {
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    margin: 0 auto; }
+  form.slideform-form .slideform-wrapper {
+    transition: all 0.5s ease; }
+  form.slideform-form .slideform-btn {
+    -webkit-appearance: none;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 30px;
+    -webkit-appearance: none;
+    border-radius: 6px;
+    background: #FF7F11;
+    border-color: #FF7F11;
+    color: #fff;
+    transition: all .15s ease;
+    outline: none; }
+    form.slideform-form .slideform-btn:disabled {
+      background: #f6f6f6;
+      border: 1px solid #f6f6f6;
+      color: #E0E0CE; }
+  form.slideform-form h2, form.slideform-form h3 {
+    margin-top: 0; }
+  form.slideform-form h2 {
+    font-size: 28px;
+    margin: 0 0 15px; }
+  form.slideform-form h3 {
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px; }
+  form.slideform-form h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 10px; }
+  form.slideform-form p {
+    font-size: 16px;
+    line-height: 1.6em;
+    margin-bottom: 15px; }
+  form.slideform-form input[type="text"], form.slideform-form input[type="email"], form.slideform-form input[type="tel"], form.slideform-form input[type="number"], form.slideform-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: none;
+    background: #f6f6f6; }
+    form.slideform-form input[type="text"]:focus, form.slideform-form input[type="email"]:focus, form.slideform-form input[type="tel"]:focus, form.slideform-form input[type="number"]:focus, form.slideform-form textarea:focus {
+      border-bottom: 1px solid #ffb677; }
+  form.slideform-form input[type="text"], form.slideform-form input[type="email"], form.slideform-form input[type="tel"], form.slideform-form input[type=number] {
+    height: 50px; }
+    form.slideform-form input[type="text"].small, form.slideform-form input[type="email"].small, form.slideform-form input[type="tel"].small, form.slideform-form input[type=number].small {
+      height: 40px;
+      padding: 10px 15px;
+      font-size: 16px; }
+  form.slideform-form .options-list label {
+    display: block;
+    margin: 0; }
+  form.slideform-form .options-list input[type=checkbox], form.slideform-form .options-list input[type=radio] {
+    position: absolute;
+    left: -9999px; }
+    form.slideform-form .options-list input[type=checkbox]:checked + span:after, form.slideform-form .options-list input[type=radio]:checked + span:after {
+      opacity: 1;
+      transform: scale(1); }
+    form.slideform-form .options-list input[type=checkbox] + span, form.slideform-form .options-list input[type=radio] + span {
+      display: inline-block;
+      position: relative;
+      font-weight: 600;
+      padding: 10px 0; }
+      form.slideform-form .options-list input[type=checkbox] + span:before, form.slideform-form .options-list input[type=radio] + span:before {
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        background: #f6f6f6;
+        border: 1px solid #E0E0CE; }
+      form.slideform-form .options-list input[type=checkbox] + span:after, form.slideform-form .options-list input[type=radio] + span:after {
+        font-family: 'slideform' !important;
+        display: inline-block;
+        content: "\f00c";
+        font-size: 22px;
+        color: #FF7F11;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        text-align: center;
+        line-height: 30px;
+        opacity: 0;
+        transform: scale(3);
+        transition: all .3s ease; }
+  form.slideform-form .options-list input[type=radio] + span:before {
+    border-radius: 50%; }
+  form.slideform-form .options-list input[type=radio] + span:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #FF7F11;
+    border-radius: 50%;
+    top: 18px;
+    left: 8px; }
+  form.slideform-form .options-buttons label {
+    margin: 0 5px 15px 0; }
+    form.slideform-form .options-buttons label input[type=radio], form.slideform-form .options-buttons label input[type=checkbox] {
+      position: absolute;
+      left: -9999px; }
+      form.slideform-form .options-buttons label input[type=radio]:checked + span, form.slideform-form .options-buttons label input[type=checkbox]:checked + span {
+        background: #FF7F11;
+        border: 1px solid #FF7F11;
+        color: #fff; }
+    form.slideform-form .options-buttons label input[type=checkbox] + span, form.slideform-form .options-buttons label input[type=radio] + span {
+      font-size: 16px;
+      line-height: 20px;
+      display: inline-block;
+      background: #f6f6f6;
+      border: 1px solid #E0E0CE;
+      padding: 5px 20px;
+      width: auto;
+      text-align: center;
+      cursor: pointer;
+      transition: all .3s ease;
+      border-radius: 4px;
+      font-weight: 600; }
+  form.slideform-form label.error {
+    color: #F93943;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px; }
+  form.slideform-form .slideform-condition {
+    display: none; }
+  form.slideform-form .slideform-footer {
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 15px;
+    border-top: 1px solid #f6f6f6;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; }
+    form.slideform-form .slideform-footer .slideform-btn {
+      height: 30px;
+      display: inline-block;
+      line-height: 30px;
+      font-size: 20px;
+      margin: 0 5px; }
+  form.slideform-form .slideform-progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    max-width: 200px;
+    background: #f6f6f6;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 0;
+    flex: 1;
+    margin-right: 20px; }
+    form.slideform-form .slideform-progress-bar span {
+      display: inline-block;
+      width: 0%;
+      height: 100%;
+      background: #FF7F11;
+      transition: all 0.5s ease; }
+
+@font-face {
+  font-family: 'slideform';
+  src: url("../fonts/slideform.eot?p7vt47");
+  src: url("../fonts/slideform.eot?p7vt47#iefix") format("embedded-opentype"), url("../fonts/slideform.ttf?p7vt47") format("truetype"), url("../fonts/slideform.woff?p7vt47") format("woff"), url("../fonts/slideform.svg?p7vt47#slideform") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'slideform' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-check:before {
+  content: "\f00c"; }
+
+.icon-close:before {
+  content: "\f00d"; }
+
+.icon-remove:before {
+  content: "\f00d"; }
+
+.icon-times:before {
+  content: "\f00d"; }
+
+.icon-chevron-left:before {
+  content: "\f053"; }
+
+.icon-chevron-right:before {
+  content: "\f054"; }
+
+.icon-chevron-up:before {
+  content: "\f077"; }
+
+.icon-chevron-down:before {
+  content: "\f078"; }
+
+.icon-paper-plane:before {
+  content: "\f1d8"; }
+
+.icon-send:before {
+  content: "\f1d8"; }

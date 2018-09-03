@@ -19,10 +19,18 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['sass', 'js'], function() {
-    browserSync.init({ server: "./dist" });
 
-    gulp.watch("src/js/*.js", ['js']);
-    gulp.watch("src/scss/*.scss", ['sass']);
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
+gulp.task('copy', function () {
+    return gulp.src('dist/**/*')
+        .pipe( gulp.dest('docs/'))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('serve', ['sass', 'js'], function() {
+    browserSync.init({ server: "./docs" });
+
+    gulp.watch("src/js/*.js", ['js', 'copy']);
+    gulp.watch("src/scss/*.scss", ['sass', 'copy']);
+    gulp.watch("docs/*.html").on('change', browserSync.reload);
 });

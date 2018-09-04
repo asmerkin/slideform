@@ -4,6 +4,7 @@
   "description": "A simple jQuery plugin to create full page slide forms.",
   "main": "index.js",
   "repository": "github:asmerkin/slideform",
+  "homepage": "https://asmerkin.github.io/slideform",
   "scripts": {
     "serve": "gulp serve"
   },

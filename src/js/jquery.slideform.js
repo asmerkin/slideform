@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Slideform - A plugin to make full height sliders with forms.
  *
@@ -7,14 +9,14 @@
 
     $.fn.slideform = function( userOptions, args ) {
 
-        // the form object.
-        var $form = $(this).addClass('slideform-form');
+        // The form object.
+        var $form = $(this);
 
         // Slides List
         var $slides = $form.find('.slideform-slide');
 
         // The slideshows wrapper, or tracker.
-        var $wrapper = $form.find('.slideform-wrapper');
+        var $wrapper = null;
 
         // We start our current slide in 0.
         var $current = 0;
@@ -96,7 +98,23 @@
 
         function init() {
 
-            $form.addClass('slideform-initialized');
+            $form.addClass('slideform-form')
+                .addClass('slideform-initialized');
+
+            // Adding the track.
+            var $track = $('<div />', { class: 'slideform-track'})
+                .insertBefore( $form.find('.slideform-slide').eq(0) );
+
+            // Adding the wrapper.
+            $wrapper = $('<div />', { class: 'slideform-wrapper' })
+                .appendTo( $track )
+                .append($form.find('.slideform-slide'));
+
+
+            $(window).on('load resize', function () {
+                console.log ( 'test' );
+                $form.find('.slideform-slide').css('height', $track.height());
+            });
 
             /*
              * If there is a validation array, and we detecte jQuery validation is
@@ -262,7 +280,7 @@
 
             if (!$.validator) return true;
 
-            valid = true;
+            var valid = true;
 
             $slides.eq( slideNumber ).find('input, textarea, select').each( function () {
                 if ( !$(this).valid() ) valid = false;

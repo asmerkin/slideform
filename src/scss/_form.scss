@@ -4,41 +4,65 @@ form.slideform-form {
     font-family: $base-font-family;
     overflow: hidden;
     position: relative;
-    padding-bottom: 50px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    .slideform-track {
+        overflow: hidden;
+        flex: 1;
+    }
+
+    .slideform-wrapper {
+        -webkit-transition: all $sf-transition;
+        transition: all $sf-transition;
+    }
 
     .slideform-slide {
         height: $sf-height;
-        padding-bottom: $sf-footer-height * 2;
+        // padding-bottom: $sf-footer-height * 2;
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: auto;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        // overflow: auto;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         -webkit-overflow-scrolling: touch;
-        opacity: .1;
-        transition: opacity .8s ease;
+        opacity: 0;
+        -webkit-transition: opacity $sf-transition;
+        transition: opacity $sf-transition;
+        overflow: auto;
 
         &.active {
             opacity: 1;
         }
 
         @media screen and (max-width: 767px) {
-            align-items: flex-start;
-            justify-content: flex-start;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
         }
     }
 
     .slideform-group {
         max-width: $sf-group-width;
         width: 90%;
-        padding: 30px;
+        padding: 30px 15px;
         margin: 0 auto;
-    }
-
-    .slideform-wrapper {
-        transition: all $sf-transition;
+        box-sizing: border-box;
     }
 
     .slideform-btn {
@@ -53,6 +77,7 @@ form.slideform-form {
         background: $sf-bg-color;
         border-color: $sf-bg-color;
         color: $sf-btn-text-color;
+        -webkit-transition: all .15s ease;
         transition: all .15s ease;
         outline: none;
 
@@ -94,11 +119,16 @@ form.slideform-form {
         margin-bottom: 15px;
     }
 
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
         width: 100%;
         padding: 15px;
         font-size: 20px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         border: none;
         outline: none;
         border-radius: none;
@@ -133,7 +163,8 @@ form.slideform-form {
 
             &:checked + span:after {
                 opacity: 1;
-                transform: scale(1);
+                -webkit-transform: scale(1);
+                        transform: scale(1);
             }
 
             + span {
@@ -167,7 +198,9 @@ form.slideform-form {
                     text-align: center;
                     line-height: 30px;
                     opacity: 0;
-                    transform: scale(3);
+                    -webkit-transform: scale(3);
+                            transform: scale(3);
+                    -webkit-transition: all .3s ease;
                     transition: all .3s ease;
                 }
             }
@@ -217,6 +250,7 @@ form.slideform-form {
             width: auto;
             text-align: center;
             cursor: pointer;
+            -webkit-transition: all .3s ease;
             transition: all .3s ease;
             border-radius: 4px;
             font-weight: 600;
@@ -236,16 +270,18 @@ form.slideform-form {
 
     .slideform-footer {
         background: #fff;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
         padding: 0 15px;
         border-top: 1px solid $sf-color-tertiary;
         z-index: 1000;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         height: $sf-footer-height;
 
         .slideform-btn {
@@ -265,7 +301,9 @@ form.slideform-form {
         display: inline-block;
         overflow: hidden;
         line-height: 0;
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         margin-right: 20px;
 
         span {
@@ -273,6 +311,7 @@ form.slideform-form {
             width: 0%;
             height: 100%;
             background: $sf-color-primary;
+            -webkit-transition: all $sf-transition;
             transition: all $sf-transition;
         }
     }

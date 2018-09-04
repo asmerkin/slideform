@@ -40,112 +40,124 @@
 </head>
 <body>
 
-    <a href="https://github.com/asmerkin/slideform"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
-
     <form action="">
 
-        <div class="slideform-wrapper">
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h1>Hello Slideforms</h1>
 
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h1>Hello Slideforms</h1>
+                <p>This is a Jquery Plugin to create a Slideform like this. The first step is to
+                    include the <tt>jquery.slideform.js</tt> file in your stack, and then you are
+                    ready to go.
+                </p>
 
-                    <p>This is a Jquery Plugin to create a Slideform like this. The first step is to
-                        include the <tt>jquery.slideform.js</tt> file in your stack, and then you are
-                        ready to go.
-                    </p>
-
-                </div>
             </div>
+        </div>
 
 
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h2>You can create inputs</h2>
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>You can create inputs</h2>
 
-                    <p>Inputs are very easy to create and they work like any other form input</p>
+                <p>Inputs are very easy to create and they work like any other form input</p>
 
-                    <input type="text" name="input" placeholder="Write something here ...">
+                <input type="text" name="input" placeholder="Write something here ...">
 
-                </div>
             </div>
+        </div>
 
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Radios and Checkboxes</h2>
 
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h2>You can also use checkboxes and Radio Buttons</h2>
+                <p>Some fancy effects, taiolred for mobile experiences.</p>
 
-                    <div class="options options-list">
-                        <label for=""><input type="radio" name="group1"><span>Radio Button</span></label>
-                        <label for=""><input type="radio" name="group1"><span>Another Radio</span></label>
-                        <label for=""><input type="radio" name="group1"><span>Third Radio Input</span></label>
-                    </div>
+                <h3>Radio Buttons</h3>
+                <div class="options options-list">
+                    <label for=""><input type="radio" name="group1"><span>Angola</span></label>
+                    <label for=""><input type="radio" name="group1"><span>Madagascar</span></label>
+                    <label for=""><input type="radio" name="group1"><span>Kenya</span></label>
                 </div>
-            </div>
 
-
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h2>And you can also use checkboxes</h2>
-                    <div class="options options-list">
-                        <label for=""><input type="checkbox" name="group2"><span>Checkbox Button</span></label>
-                        <label for=""><input type="checkbox" name="group2"><span>Another Checkbox</span></label>
-                        <label for=""><input type="checkbox" name="group2"><span>Third Checkbox Input</span></label>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h3>You can even use radios and checkboxes as buttons lists</h3>
-                    <p>This is particularily useful for mobile enviroments</p>
-
-                    <h3>Checkboxes Example</h3>
-                    <div class="options options-buttons">
-                        <label for=""><input type="checkbox" name="group3"><span>USD</span></label>
-                        <label for=""><input type="checkbox" name="group3"><span>GBP</span></label>
-                        <label for=""><input type="checkbox" name="group3"><span>ARS</span></label>
-                    </div>
-
-                    <h3>Radios Example</h3>
-                    <div class="options options-buttons">
-                        <label for=""><input type="radio" name="group4"><span>Yes</span></label>
-                        <label for=""><input type="radio" name="group4"><span>No</span></label>
-                        <label for=""><input type="radio" name="group4"><span>Maybe</span></label>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h2>You can also set conditions with pretty simple data attributes</h2>
-
-                    <h3>Show Condition?</h3>
-                    <div class="options options-buttons">
-                        <label for=""><input type="radio" name="group5" value="yes"><span>Yes</span></label>
-                        <label for=""><input type="radio" name="group5" value="no"><span>No</span></label>
-                    </div>
-
-                    <div data-condition="input.group5 == 'yes'">
-                        <h3>Showing condition</h3>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="slideform-slide">
-                <div class="slideform-group">
-                    <h2>Learn More</h2>
-                    <p>Learn more about Slideform reading our docs in Github.</p>
-
-                    <p><a href="https://github.com/asmerkin/slideform/wiki">https://github.com/asmerkin/slideform/wiki</a></p>
+                <h3>Checkboxes</h3>
+                <div class="options options-list">
+                    <label for=""><input type="checkbox" name="group2"><span>Russia</span></label>
+                    <label for=""><input type="checkbox" name="group2"><span>United Kingdom</span></label>
+                    <label for=""><input type="checkbox" name="group2"><span>France</span></label>
                 </div>
             </div>
         </div>
-        
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Radios and Checkboxes as Buttons</h2>
+                <p>This is particularily useful for mobile enviroments</p>
+
+                <h3>Checkboxes Example</h3>
+                <div class="options options-buttons">
+                    <label for=""><input type="checkbox" name="group3"><span>USD</span></label>
+                    <label for=""><input type="checkbox" name="group3"><span>GBP</span></label>
+                    <label for=""><input type="checkbox" name="group3"><span>EUR</span></label>
+                </div>
+
+                <h3>Radios Example</h3>
+                <div class="options options-buttons">
+                    <label for=""><input type="radio" name="group4"><span>Yes</span></label>
+                    <label for=""><input type="radio" name="group4"><span>No</span></label>
+                    <label for=""><input type="radio" name="group4"><span>Maybe</span></label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>You can also set conditions with pretty simple data attributes</h2>
+
+                <h3>Show Condition?</h3>
+                <div class="options options-buttons">
+                    <label for=""><input type="radio" name="group5" value="yes"><span>Yes</span></label>
+                    <label for=""><input type="radio" name="group5" value="no"><span>No</span></label>
+                </div>
+
+                <div data-condition="input.group5 == 'yes'">
+                    <h3>This is another condition</h3>
+                    <div class="options options-buttons">
+                        <label for=""><input type="radio" name="group6" value="yes"><span>Yes</span></label>
+                        <label for=""><input type="radio" name="group6" value="no"><span>No</span></label>
+                    </div>
+                </div>
+
+                <div data-condition="input.group5 == 'yes' &&  input.group6 == 'yes'">
+                    <p>This message appears after all conditions have been marked as "yes".</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Ready for Jquery Validation Plugin</h2>
+
+                <p>You can attach the <tt>jquery.validate.js</tt> file and define your own validation rules.</p>
+                <div class="options options-buttons">
+                    <label for=""><input type="radio" name="group7" value="valid"><span>Valid</span></label>
+                    <label for=""><input type="radio" name="group7" value="invalid"><span>Invalid</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideform-slide">
+            <div class="slideform-group">
+                <h2>Learn More</h2>
+                <p>Learn more about Slideform reading our docs in Github.</p>
+
+                <p><a href="https://github.com/asmerkin/slideform/wiki">https://github.com/asmerkin/slideform/wiki</a></p>
+            </div>
+        </div>
+
         <footer class="slideform-footer">
             <div class="slideform-progress-bar">
                 <span></span>
@@ -163,17 +175,42 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
     <script src="js/jquery.slideform.js"></script>
 
     <script>
-        $(document).ready( function () {
-            $('form').slideform();
 
-            $('form').submit( function () {
-                $('form').slideform('goForward');
-                return;
+        ( function ($) {
+            jQuery.validator.addMethod("equals", function(value, element, param) {
+              return this.optional(element) || value === param;
             });
-        });
+
+            $(document).ready( function () {
+
+                var $form = $('form');
+
+                $form.slideform({
+                    validate: {
+                        rules: {
+                            group7: {
+                                required: true,
+                                equals: "valid"
+                            }
+                        },
+                        messages: {
+                            group7: {
+                                required: 'Please select an option',
+                                equals: 'You must select valid!'
+                            }
+                        }
+                    },
+                    submit: function (event, form) {
+                        $form.trigger('goForward');
+                    }
+                });
+            });
+        }(jQuery))
     </script>
 </body>
 </html>

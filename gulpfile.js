@@ -1,11 +1,13 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var scsslint = require('gulp-scss-lint');
 var browserSync = require('browser-sync').create();
 
 
 gulp.task('sass', function () {
     return gulp.src('src/scss/slideform.scss')
+        .pipe( scsslint({ config: 'scsslint.yml' }) )
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());

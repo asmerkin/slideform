@@ -1,7 +1,6 @@
 form.slideform-form {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   overflow: hidden;
   position: relative;
   display: flex;
@@ -34,7 +33,8 @@ form.slideform-form {
     opacity: 0;
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
-    overflow: auto; }
+    overflow: auto;
+    padding-bottom: 120px; }
     form.slideform-form .slideform-slide.active {
       opacity: 1; }
     @media screen and (max-width: 767px) {
@@ -53,65 +53,49 @@ form.slideform-form {
     box-sizing: border-box; }
   form.slideform-form .slideform-btn {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     height: 40px;
     padding: 0 20px;
     font-size: 16px;
     margin-right: 10px;
     margin-top: 30px;
-    -webkit-appearance: none;
     border-radius: 6px;
     background: #FF7F11;
-    border-color: #FF7F11;
+    border: 1px solid #FF7F11;
     color: #fff;
     -webkit-transition: all .15s ease;
-    transition: all .15s ease;
+    transition: all .3s ease;
     outline: none; }
+    form.slideform-form .slideform-btn:active {
+      border-color: #dd6600;
+      background: #dd6600; }
     form.slideform-form .slideform-btn:disabled {
       background: #f6f6f6;
       border: 1px solid #f6f6f6;
       color: #E0E0CE; }
-  form.slideform-form h2, form.slideform-form h3 {
-    margin-top: 0; }
-  form.slideform-form h2 {
-    font-size: 28px;
-    margin: 0 0 15px; }
-  form.slideform-form h3 {
-    font-size: 20px;
-    line-height: 1.4em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-top: 20px; }
-  form.slideform-form h4 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 20px 0 10px; }
-  form.slideform-form p {
-    font-size: 16px;
-    line-height: 1.6em;
-    margin-bottom: 15px; }
-  form.slideform-form a {
-    -webkit-tap-highlight-color: transparent; }
-  form.slideform-form input[type="text"], form.slideform-form input[type="email"], form.slideform-form input[type="tel"], form.slideform-form input[type="number"], form.slideform-form textarea {
+  form.slideform-form input[type='text'], form.slideform-form input[type='email'], form.slideform-form input[type='tel'], form.slideform-form input[type='number'], form.slideform-form textarea {
     width: 100%;
     padding: 15px;
     font-size: 20px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border: none;
+    border: 1px solid #E0E0CE;
     outline: none;
     border-radius: none;
     background: #f6f6f6; }
-    form.slideform-form input[type="text"]:focus, form.slideform-form input[type="email"]:focus, form.slideform-form input[type="tel"]:focus, form.slideform-form input[type="number"]:focus, form.slideform-form textarea:focus {
+    form.slideform-form input[type='text']:focus, form.slideform-form input[type='email']:focus, form.slideform-form input[type='tel']:focus, form.slideform-form input[type='number']:focus, form.slideform-form textarea:focus {
       border-bottom: 1px solid #ffb677; }
-  form.slideform-form input[type="text"], form.slideform-form input[type="email"], form.slideform-form input[type="tel"], form.slideform-form input[type=number] {
+  form.slideform-form input[type='text'], form.slideform-form input[type='email'], form.slideform-form input[type='tel'], form.slideform-form input[type=number] {
     height: 50px; }
-    form.slideform-form input[type="text"].small, form.slideform-form input[type="email"].small, form.slideform-form input[type="tel"].small, form.slideform-form input[type=number].small {
+    form.slideform-form input[type='text'].small, form.slideform-form input[type='email'].small, form.slideform-form input[type='tel'].small, form.slideform-form input[type=number].small {
       height: 40px;
       padding: 10px 15px;
       font-size: 16px; }
   form.slideform-form .options-list label {
     display: block;
-    margin: 0; }
+    margin: 0;
+    padding: 10px 0; }
   form.slideform-form .options-list input[type=checkbox], form.slideform-form .options-list input[type=radio] {
     position: absolute;
     left: -9999px; }
@@ -122,8 +106,7 @@ form.slideform-form {
     form.slideform-form .options-list input[type=checkbox] + span, form.slideform-form .options-list input[type=radio] + span {
       display: inline-block;
       position: relative;
-      font-weight: 600;
-      padding: 10px 0; }
+      font-weight: 600; }
       form.slideform-form .options-list input[type=checkbox] + span:before, form.slideform-form .options-list input[type=radio] + span:before {
         content: '';
         margin-right: 10px;
@@ -136,14 +119,13 @@ form.slideform-form {
       form.slideform-form .options-list input[type=checkbox] + span:after, form.slideform-form .options-list input[type=radio] + span:after {
         font-family: 'slideform' !important;
         display: inline-block;
-        content: "\f00c";
+        content: '\f00c';
         font-size: 22px;
         color: #FF7F11;
         width: 30px;
         height: 30px;
         position: absolute;
         left: 0;
-        top: 10px;
         text-align: center;
         line-height: 30px;
         opacity: 0;
@@ -159,36 +141,39 @@ form.slideform-form {
     height: 16px;
     background: #FF7F11;
     border-radius: 50%;
-    top: 18px;
+    top: 8px;
     left: 8px; }
   form.slideform-form .options-buttons label {
-    margin: 0 5px 15px 0; }
-    form.slideform-form .options-buttons label input[type=radio], form.slideform-form .options-buttons label input[type=checkbox] {
-      position: absolute;
-      left: -9999px; }
-      form.slideform-form .options-buttons label input[type=radio]:checked + span, form.slideform-form .options-buttons label input[type=checkbox]:checked + span {
-        background: #FF7F11;
-        border: 1px solid #FF7F11;
-        color: #fff; }
-    form.slideform-form .options-buttons label input[type=checkbox] + span, form.slideform-form .options-buttons label input[type=radio] + span {
-      font-size: 16px;
-      line-height: 20px;
-      display: inline-block;
-      background: #f6f6f6;
-      border: 1px solid #E0E0CE;
-      padding: 5px 20px;
-      width: auto;
-      text-align: center;
-      cursor: pointer;
-      -webkit-transition: all .3s ease;
-      transition: all .3s ease;
-      border-radius: 4px;
-      font-weight: 600; }
+    margin: 0 5px 15px 0;
+    display: inline-block;
+    text-transform: none; }
+  form.slideform-form .options-buttons input[type=radio], form.slideform-form .options-buttons input[type=checkbox] {
+    position: absolute;
+    left: -9999px; }
+    form.slideform-form .options-buttons input[type=radio]:checked + span, form.slideform-form .options-buttons input[type=checkbox]:checked + span {
+      background: #FF7F11;
+      border: 1px solid #FF7F11;
+      color: #fff; }
+  form.slideform-form .options-buttons input[type=checkbox] + span, form.slideform-form .options-buttons input[type=radio] + span {
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    background: #f6f6f6;
+    border: 1px solid #E0E0CE;
+    padding: 5px 20px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border-radius: 4px;
+    font-weight: 600; }
   form.slideform-form label.error {
     color: #F93943;
     display: block;
     font-size: 14px;
-    margin-top: 5px; }
+    margin-top: 5px;
+    text-transform: none; }
   form.slideform-form .slideform-condition {
     display: none; }
   form.slideform-form .slideform-footer {

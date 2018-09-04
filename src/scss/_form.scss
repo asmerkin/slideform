@@ -1,7 +1,6 @@
 form.slideform-form {
     width: 100%;
     height: 100%;
-    font-family: $base-font-family;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -42,6 +41,7 @@ form.slideform-form {
         -webkit-transition: opacity $sf-transition;
         transition: opacity $sf-transition;
         overflow: auto;
+        padding-bottom: 120px;
 
         &.active {
             opacity: 1;
@@ -66,20 +66,26 @@ form.slideform-form {
     }
 
     .slideform-btn {
-         -webkit-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance:    none;
+        appearance:         none;
         height: $sf-btn-height;
         padding: $sf-btn-padding;
         font-size: $sf-btn-font-size;
         margin-right: 10px;
         margin-top: 30px;
-        -webkit-appearance: none;
         border-radius: 6px;
         background: $sf-bg-color;
-        border-color: $sf-bg-color;
+        border: 1px solid $sf-bg-color;
         color: $sf-btn-text-color;
         -webkit-transition: all .15s ease;
-        transition: all .15s ease;
+        transition: all .3s ease;
         outline: none;
+
+        &:active {
+            border-color: darken( $sf-bg-color, 10% );
+            background: darken( $sf-bg-color, 10% );
+        }
 
         &:disabled {
             background: $sf-color-tertiary;
@@ -88,48 +94,13 @@ form.slideform-form {
         }
     }
 
-
-
-    h2, h3 {
-        margin-top: 0;
-    }
-
-    h2 {
-        font-size: 28px;
-        margin: 0 0 15px;
-    }
-
-    h3 {
-        font-size: 20px;
-        line-height: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-
-    h4 {
-        font-size: 16px;
-        font-weight: bold;
-        margin: 20px 0 10px;
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 1.6em;
-        margin-bottom: 15px;
-    }
-
-    a {
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+    input[type='text'], input[type='email'], input[type='tel'], input[type='number'], textarea {
         width: 100%;
         padding: 15px;
         font-size: 20px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        border: none;
+        border: 1px solid $sf-color-secondary;
         outline: none;
         border-radius: none;
         background: $sf-color-tertiary;
@@ -139,7 +110,7 @@ form.slideform-form {
         }
     }
 
-    input[type="text"], input[type="email"], input[type="tel"], input[type=number] {
+    input[type='text'], input[type='email'], input[type='tel'], input[type=number] {
         height: 50px;
 
         &.small {
@@ -154,6 +125,7 @@ form.slideform-form {
         label {
             display: block;
             margin: 0;
+            padding: 10px 0;
         }
 
         input[type=checkbox], input[type=radio] {
@@ -171,7 +143,6 @@ form.slideform-form {
                 display: inline-block;
                 position: relative;
                 font-weight: 600;
-                padding: 10px 0;
 
                 &:before {
                     content: '';
@@ -187,14 +158,13 @@ form.slideform-form {
                 &:after {
                     font-family: 'slideform' !important;
                     display: inline-block;
-                    content: "\f00c";
+                    content: '\f00c';
                     font-size: 22px;
                     color: $sf-color-primary;
                     width: 30px;
                     height: 30px;
                     position: absolute;
                     left: 0;
-                    top: 10px;
                     text-align: center;
                     line-height: 30px;
                     opacity: 0;
@@ -217,43 +187,46 @@ form.slideform-form {
                 height: 16px;
                 background: $sf-color-primary;
                 border-radius: 50%;
-                top: 18px;
+                top: 8px;
                 left: 8px;
             }
         }
     }
 
 
-    .options-buttons label {
-
-        margin: 0 5px 15px 0;
+    .options-buttons {
+        label {
+           margin: 0 5px 15px 0;
+           display: inline-block;
+           text-transform: none;
+       }
 
         input[type=radio], input[type=checkbox] {
-            position: absolute;
-            left: -9999px;
+           position: absolute;
+           left: -9999px;
 
-            &:checked + span {
-                background: $sf-color-primary;
-                border: 1px solid $sf-color-primary;
-                color: $sf-btn-text-color;
-            }
+           &:checked + span {
+               background: $sf-color-primary;
+               border: 1px solid $sf-color-primary;
+               color: $sf-btn-text-color;
+           }
         }
 
 
         input[type=checkbox] + span, input[type=radio] + span {
-            font-size: 16px;
-            line-height: 20px;
-            display: inline-block;
-            background: $sf-color-tertiary;
-            border: 1px solid $sf-color-secondary;
-            padding: 5px 20px;
-            width: auto;
-            text-align: center;
-            cursor: pointer;
-            -webkit-transition: all .3s ease;
-            transition: all .3s ease;
-            border-radius: 4px;
-            font-weight: 600;
+           font-size: 16px;
+           line-height: 20px;
+           display: inline-block;
+           background: $sf-color-tertiary;
+           border: 1px solid $sf-color-secondary;
+           padding: 5px 20px;
+           width: auto;
+           text-align: center;
+           cursor: pointer;
+           -webkit-transition: all .3s ease;
+           transition: all .3s ease;
+           border-radius: 4px;
+           font-weight: 600;
         }
     }
 
@@ -262,6 +235,7 @@ form.slideform-form {
         display: block;
         font-size: 14px;
         margin-top: 5px;
+        text-transform: none;
     }
 
     .slideform-condition {

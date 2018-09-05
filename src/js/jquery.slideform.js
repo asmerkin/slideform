@@ -18,6 +18,9 @@
         // The slideshows wrapper, or tracker.
         var $wrapper = null;
 
+        // The track is where the wrapper slides in.
+        var $track = null; 
+
         // We start our current slide in 0.
         var $current = 0;
 
@@ -95,6 +98,12 @@
         });
 
 
+        // We adjust slides size on resizing.
+        $(window).resize( function() {
+            setSlidesHeight();
+        });
+
+
 
         function init() {
 
@@ -102,7 +111,7 @@
                 .addClass('slideform-initialized');
 
             // Adding the track.
-            var $track = $('<div />', { class: 'slideform-track'})
+            $track = $('<div />', { class: 'slideform-track'})
                 .insertBefore( $form.find('.slideform-slide').eq(0) );
 
             // Adding the wrapper.
@@ -111,10 +120,7 @@
                 .append($form.find('.slideform-slide'));
 
 
-            $(window).on('load resize', function () {
-                console.log ( 'test' );
-                $form.find('.slideform-slide').css('height', $track.height());
-            });
+            setSlidesHeight();
 
             /*
              * If there is a validation array, and we detecte jQuery validation is
@@ -253,6 +259,15 @@
 
             $current--;
             $form.goTo( $current );
+        }
+
+
+        /**
+         * Sets the parent track height to all slides.
+         * @return {[type]} [description]
+         */
+        function setSlidesHeight() {
+            $form.find('.slideform-slide').css('height', $track.outerHeight());
         }
 
 

@@ -34,7 +34,7 @@ form.slideform-form {
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
     overflow: auto;
-    padding-bottom: 120px; }
+    box-sizing: border-box; }
     form.slideform-form .slideform-slide.active {
       opacity: 1; }
     @media screen and (max-width: 767px) {
@@ -83,7 +83,9 @@ form.slideform-form {
     border: 1px solid #E0E0CE;
     outline: none;
     border-radius: none;
-    background: #f6f6f6; }
+    background: #f6f6f6;
+    -webkit-appearance: none;
+    appearance: none; }
     form.slideform-form input[type='text']:focus, form.slideform-form input[type='email']:focus, form.slideform-form input[type='tel']:focus, form.slideform-form input[type='number']:focus, form.slideform-form textarea:focus {
       border-bottom: 1px solid #ffb677; }
   form.slideform-form input[type='text'], form.slideform-form input[type='email'], form.slideform-form input[type='tel'], form.slideform-form input[type=number] {
@@ -98,7 +100,10 @@ form.slideform-form {
     padding: 10px 0; }
   form.slideform-form .options-list input[type=checkbox], form.slideform-form .options-list input[type=radio] {
     position: absolute;
-    left: -9999px; }
+    z-index: -1;
+    visibility: hidden;
+    width: auto;
+    height: auto; }
     form.slideform-form .options-list input[type=checkbox]:checked + span:after, form.slideform-form .options-list input[type=radio]:checked + span:after {
       opacity: 1;
       -webkit-transform: scale(1);

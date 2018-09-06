@@ -3,14 +3,21 @@ form.slideform-form {
     height: 100%;
     overflow: hidden;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 
     .slideform-track {
         overflow: hidden;
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
     }
 
     .slideform-wrapper {
@@ -24,14 +31,9 @@ form.slideform-form {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        // overflow: auto;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
@@ -40,28 +42,27 @@ form.slideform-form {
         -webkit-transition: opacity $sf-transition;
         transition: opacity $sf-transition;
         overflow: auto;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
 
         &.active {
             opacity: 1;
         }
 
-        @media screen and (max-width: 767px) {
-            -webkit-box-align: start;
-                -ms-flex-align: start;
-                    align-items: flex-start;
-            -webkit-box-pack: start;
-                -ms-flex-pack: start;
-                    justify-content: flex-start;
+        @include breakpoint(md) {
+            display: block;
         }
     }
 
     .slideform-group {
         max-width: $sf-group-width;
-        width: 90%;
         padding: 30px 15px;
-        margin: 0 auto;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+
+        @include breakpoint(md) {
+            margin: auto;
+        }
     }
 
     .slideform-btn {
@@ -78,6 +79,7 @@ form.slideform-form {
         border: 1px solid $sf-bg-color;
         color: $sf-btn-text-color;
         -webkit-transition: all .15s ease;
+        -webkit-transition: all .3s ease;
         transition: all .3s ease;
         outline: none;
 
@@ -104,7 +106,8 @@ form.slideform-form {
         border-radius: none;
         background: $sf-color-tertiary;
         -webkit-appearance: none;
-        appearance: none;
+        -moz-appearance: none;
+             appearance: none;
 
         &:focus {
             border-bottom: 1px solid lighten( $sf-color-primary, 20%);

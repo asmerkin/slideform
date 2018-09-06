@@ -19,7 +19,7 @@
         var $wrapper = null;
 
         // The track is where the wrapper slides in.
-        var $track = null; 
+        var $track = null;
 
         // We start our current slide in 0.
         var $current = 0;
@@ -222,9 +222,14 @@
                 percentage = (slide - 1) * ( 100 / ($slides.length - 2) );
             }
 
-
+            // We translate the wrapper to produce the sliding effect.
             $wrapper.css('transform', 'translateY(' + translation * -1 + '%)');
+
+            // We also update the progress bar.
             $('.slideform-progress-bar span').css('width', percentage + '%' );
+
+            // We need to scroll top the active slide.
+            $slides.filter('.active').animate({ scrollTop: 0}, 'fast' );
 
             // Let's set the active class.
             $slides.eq( slide ).addClass('active').siblings().removeClass('active');
@@ -232,6 +237,7 @@
             // Let's set the new max if available.
             $max = ( slide > $max ) ? slide : $max;
 
+            // Let's update buttons status
             updateButtonsStatus( slide );
         }
 

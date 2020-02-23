@@ -6,18 +6,22 @@
   "repository": "github:asmerkin/slideform",
   "homepage": "https://asmerkin.github.io/slideform",
   "scripts": {
-    "serve": "gulp serve"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "author": "Andrés Smerkin <andres@intrepits.com>",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.1",
-    "gulp-scss-lint": "^0.7.1"
+    "laravel-mix": "^5.0.1",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2"
   }
 }

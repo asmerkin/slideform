@@ -95,7 +95,13 @@ form.slideform-form {
         }
     }
 
-    input[type='text'], input[type='email'], input[type='tel'], input[type='number'], textarea {
+    // input[type='text'],
+    // input[type='email'],
+    // input[type='tel'],
+    // input[type='number'],
+    // input[type=password],
+    input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+    textarea {
         width: 100%;
         padding: 15px;
         font-size: 20px;

@@ -236,6 +236,9 @@
 
             // Let's set the new max if available.
             $max = ( slide > $max ) ? slide : $max;
+            
+            // Update the $current variable so that it won't go back to a previou8s step
+            $current = slide;
 
             // Let's update buttons status
             updateButtonsStatus( slide );
